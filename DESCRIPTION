@@ -21,3 +21,4 @@ Imports:
     rlang
 URL: https://github.com/sebastiansauer/doodleproblem
 BugReports: https://github.com/sebastiansauer/doodleproblem/issues
+RoxygenNote: 7.2.3

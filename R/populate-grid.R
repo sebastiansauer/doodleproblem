@@ -5,10 +5,11 @@
 #' @param p number of picked options
 #' @param dep degree of dependency
 #'
-#' @return
+#' @return dataframe with results of Doodle match sensitivity analysis
 #' @export
 #'
 #' @examples
+#' populate_grid(n_colleagues, o, p, dep)
 populate_grid <- function(n_colleagues,
                           o,
                           p,
@@ -19,16 +20,16 @@ populate_grid <- function(n_colleagues,
                    o = o,
                    p = p,
                    dep = dep)
-  
+
   if (verbose) print(paste0("Grid size (nrow): ", nrow(d)))
-  
+
   d_grid <-
-    d |> 
-    mutate(match_prob = 
+    d |>
+    mutate(match_prob =
              pmap_dbl(
-               .l = list(n_colleagues = n_colleagues, o = o, p = p, dep = dep), 
+               .l = list(n_colleagues = n_colleagues, o = o, p = p, dep = dep),
                .f = prob_doodle_match,
                .progress = verbose))
-  
+
   return(d_grid)
 }
