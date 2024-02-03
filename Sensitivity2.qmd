@@ -1,0 +1,68 @@
+---
+title: "Sensitivity 1"
+format: html
+execute: 
+  cache: true
+---
+
+
+
+# Setup
+```{r}
+#| message: false
+#| output: "hide"
+library(tidyverse)
+library(tictoc)
+```
+
+
+# Source Funs
+
+```{r}
+#| message: false
+#| output: "hide"
+fun_files <- list.files(path = "funs", pattern = "\\.R$", full.names = TRUE)
+map(fun_files, source)
+```
+
+
+# Parameters
+
+```{r}
+n_colleagues <- 3
+p <- 3
+o <- 10
+dep <- 0
+```
+
+
+
+
+
+
+# Sensitivity 1
+
+
+```{r pop-grid}
+#| output: false
+tic()
+grid <- populate_grid(n_colleagues = 3:5, 
+                      o = c(5, 10, 15), 
+                      p = c(3, 5), 
+                      dep = c(0, .25, .5, .75))
+toc()
+```
+
+```{r}
+glimpse(grid)
+```
+
+
+# Visualize grid
+
+
+
+```{r vis-grid}
+vis_grid2(grid, facet_var = "dep")
+```
+
