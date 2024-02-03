@@ -19,4 +19,5 @@ Imports:
     purrr,
     tibble,
     rlang
-
+URL: https://github.com/sebastiansauer/doodleproblem
+BugReports: https://github.com/sebastiansauer/doodleproblem/issues
