@@ -8,18 +8,16 @@ Monte Carlo methods are used.
 ##  Motivation
 
 Have you ever tried to find a time slot for a meeting using a tool such as "[Doodle](https://doodle.com/en/)"?
-
 If not, consider yourself lucky.
 Otherwise you will be well aware of the chagrin of finding a time slot that suits all of your colleagues.
 
 Let's call a time slot where all of your colleagues invited for the meeting have a free time slot a *matching time slot*, or a *match* for short.
-
 [Here's a sample image](https://s3-eu-west-1.amazonaws.com/com.doodle.wp.assets.prod/uploads/2018/10/19111605/umfrage-uebersicht.png) for a "doodle" in order to find a a match.
 
 
 
 
-![Doodle Example. Image Source: Doodle.com](https://s3-eu-west-1.amazonaws.com/com.doodle.wp.assets.prod/uploads/2018/10/19111605/umfrage-uebersicht.png){width="50%"}
+![Doodle Example. Image Source: Doodle.com](man/figures/doodle.png)
 
 
 Some persons find that the best way to find a matching time slot is to offer a great number of time slots to your colleagues. 
