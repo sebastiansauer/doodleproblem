@@ -19,7 +19,7 @@ Imports:
     purrr,
     tibble,
     rlang
-URL: https://github.com/sebastiansauer/doodleproblem
+URL: https://github.com/sebastiansauer/doodleproblem, https://sebastiansauer.github.io/doodleproblem/
 BugReports: https://github.com/sebastiansauer/doodleproblem/issues
 RoxygenNote: 7.2.3
 Suggests: 
