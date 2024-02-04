@@ -20,12 +20,14 @@ prob_doodle_match <- function(n_colleagues,
                           return_prob = TRUE
 ) {
 
+  # compute the samples:
   out <- doodle_samples(n_colleagues = n_colleagues,
                         o = o,
                         p = p,
                         r = r,
                         dep = dep)
 
+  # summarize them:
   out <- summarize_samples(out)
 
   if (return_prob) {

@@ -1,5 +1,7 @@
 #' Monte Carlo analysis of doodle matches
 #'
+#' Essentially a loop around `count_common_slots`
+#'
 #' @param slots_chosen_collision slots chosen by all colleagues (match)
 #' @param n_colleagues  number of colleagues
 #' @param o  number of options to choose from

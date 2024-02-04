@@ -31,11 +31,8 @@ sample_with_dependency <- function(p_set, o, dep) {
   Pr_pi = Pr_P / p
   Pr_ui = u / o
 
-
   Pr_P_new <- Pr_P + dep*Pr_U
   Pr_Pi_new <- Pr_P_new / p
-
-
 
   Pr_U_new <- Pr_U - dep*Pr_U
   Pr_Ui_new <- Pr_U_new / u

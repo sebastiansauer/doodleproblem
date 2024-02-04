@@ -75,6 +75,13 @@ attr(smples1, "o")
 ```
 
 
+A similar dataset is available as data:
+
+```{r}
+data(smples1)
+```
+
+
 # Doodle samples 2
 
 Let's set `dep` to .5:
@@ -82,6 +89,13 @@ Let's set `dep` to .5:
 ```{r cache=TRUE}
 smples2 <- doodle_samples(n_colleagues, o, p, dep = .5)
 glimpse(smples2)
+```
+
+
+A similar dataset is available as data:
+
+```{r}
+data(smples2)
 ```
 
 
