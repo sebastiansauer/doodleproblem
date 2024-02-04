@@ -1,0 +1,66 @@
+---
+title: "Sensitivity Analysis 1"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Sensitivity Analysis 1}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  cache = TRUE
+)
+```
+
+```{r setup}
+library(doodleproblem)
+library(tidyverse)
+library(tictoc)
+```
+
+
+
+# Parameters
+
+```{r}
+n_colleagues <- 3
+p <- 3
+o <- 10
+dep <- 0
+```
+
+
+
+
+
+
+# Sensitivity analysis 1
+
+
+```{r pop-grid, cache=TRUE, eval = FALSE}
+tic()
+grid1 <- populate_grid(n_colleagues = 2:5, 
+                      o = c(5, 10, 15, 20, 25, 30), 
+                      p = c(3, 5, 7, 10), 
+                      dep = 0)
+toc()
+```
+
+It's quicker to load from disk:
+
+```{r}
+data(grid1)
+```
+
+
+
+# Visualize grid
+
+
+```{r vis-grid, fig.width=9, dpi=300, out.width="100%", fig.asp=1.5}
+vis_grid(grid1)
+```
+

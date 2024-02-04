@@ -22,3 +22,7 @@ Imports:
 URL: https://github.com/sebastiansauer/doodleproblem
 BugReports: https://github.com/sebastiansauer/doodleproblem/issues
 RoxygenNote: 7.2.3
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
