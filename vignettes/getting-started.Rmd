@@ -1,0 +1,59 @@
+---
+title: "Getting Started: Compute doodle match probability"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started: Compute doodle match probability}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  cache = TRUE,
+  message = FALSE
+)
+```
+
+```{r setup}
+library(doodleproblem)
+library(tidyverse)
+library(tictoc)
+```
+
+
+
+
+# Parameters
+
+```{r}
+n_colleagues <- 3
+p <- 3
+o <- 10
+dep <- 0
+```
+
+
+# Doodle match probability
+
+
+```{r}
+prob_doodle_match(n_colleagues = 5,
+                  o = 10,
+                  p = 3,
+                  dep = 0)
+```
+
+We can also a somewhat more detailled output by setting `return_prob` to `FALSE`:
+
+
+
+
+```{r}
+prob_doodle_match(n_colleagues = 5,
+                  o = 10,
+                  p = 3,
+                  dep = 0,
+                  return_prob = FALSE)
+```
