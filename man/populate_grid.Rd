@@ -2,7 +2,7 @@
 % Please edit documentation in R/populate-grid.R
 \name{populate_grid}
 \alias{populate_grid}
-\title{Runs a sensitivity analysis for doodle mathces}
+\title{Runs a sensitivity analysis for doodle matches}
 \usage{
 populate_grid(n_colleagues, o, p, dep, verbose = FALSE)
 }
@@ -19,7 +19,9 @@ populate_grid(n_colleagues, o, p, dep, verbose = FALSE)
 dataframe with results of Doodle match sensitivity analysis
 }
 \description{
-Runs a sensitivity analysis for doodle mathces
+Can take some computation times. Note that there are precomputed
+results in data folder. Parameters of computations
+are added as attributes to the output dataframe.
 }
 \examples{
 populate_grid(n_colleagues, o, p, dep)

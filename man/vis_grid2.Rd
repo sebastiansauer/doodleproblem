@@ -4,7 +4,7 @@
 \alias{vis_grid2}
 \title{Visualize the sensitivity grid of a Doodle match analysis}
 \usage{
-vis_grid2(d_grid, facet_var)
+vis_grid2(d_grid, facet_var_rows, facet_var_cols)
 }
 \arguments{
 \item{d_grid}{output of `populate_grid`}

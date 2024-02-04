@@ -18,12 +18,9 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(doodleproblem)
-library(tidyverse)
-library(tictoc)
+library(dplyr)
+library(ggplot2)
 ```
-
-
-
 
 
 

@@ -19,18 +19,19 @@ prob_doodle_match <- function(n_colleagues,
                           dep,
                           return_prob = TRUE
 ) {
-  first_common_slot <- count_common_slots(n_colleagues, o = o, p = p, dep = dep)
-  all_common_slots <- estimate_common_slots(first_common_slot,
-                                            n_colleagues = n_colleagues,
-                                            o = o,
-                                            p = p,
-                                            dep = dep)
-  out <- summarize_samples(all_common_slots)
-  
+
+  out <- doodle_samples(n_colleagues = n_colleagues,
+                        o = o,
+                        p = p,
+                        r = r,
+                        dep = dep)
+
+  out <- summarize_samples(out)
+
   if (return_prob) {
     out <- prop_match(out, n_colleagues = n_colleagues)
     stopifnot(class(out) == "numeric")
   }
-  
+
   return(out)
 }

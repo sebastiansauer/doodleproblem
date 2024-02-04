@@ -1,8 +1,8 @@
 ---
-title: "Getting Started: Compute doodle match probability"
+title: "Getting Started: Compute Doodle match probability"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Getting Started: Compute doodle match probability}
+  %\VignetteIndexEntry{Getting Started: Compute Doodle match probability}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -57,3 +57,42 @@ prob_doodle_match(n_colleagues = 5,
                   dep = 0,
                   return_prob = FALSE)
 ```
+
+
+# Doodle samples 1
+
+
+```{r cache=TRUE}
+smples1 <- doodle_samples(n_colleagues, o, p)
+glimpse(smples1)
+```
+
+The parameters given to the function call can be found using `attr` afterwards:
+
+```{r}
+attr(smples1, "n_colleagues")
+attr(smples1, "o")
+```
+
+
+# Doodle samples 2
+
+Let's set `dep` to .5:
+
+```{r cache=TRUE}
+smples2 <- doodle_samples(n_colleagues, o, p, dep = .5)
+glimpse(smples2)
+```
+
+
+# Summarize samples
+
+`summarize_smples` is what is finally called in `prob_doodle_match`.
+
+
+```{r}
+summarize_samples(smples1)
+```
+
+
+
