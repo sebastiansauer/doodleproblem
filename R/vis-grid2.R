@@ -38,10 +38,12 @@ vis_grid2 <- function(d_grid, facet_var_rows, facet_var_cols) {
     #            labeller = labeller(.rows = facet_var_rows_labs,
     #                                .cols = facet_var_cols_labs)) +
     labs(title = "Proportiong of a match when 'doodling' for a joint meeting",
-         caption = "p: Number of options picked per colleague;\n
+         caption =
+      "p: Number of options picked per colleague;\n
        n: Number of colleagues approached;\n
        o: Number of available time slot options to choose from;\n
-       dep: Degree of depedency between colleagues",
+       dep: Degree of depedency between colleagues;\n
+       p_sd: sd of normal distro where mean is p",
        y = "Probality of a match",
        color = "Number of\ncolleagues",
        text = "") +

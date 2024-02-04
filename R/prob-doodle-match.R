@@ -6,6 +6,7 @@
 #' @param r number of repetions (simulates) samples
 #' @param dep dependencies between reviewers
 #' @param return_prob return a single number?
+#' @param p_sd sd of p
 #'
 #' @return dataframe or numeric
 #' @export
@@ -17,6 +18,7 @@ prob_doodle_match <- function(n_colleagues,
                           p,
                           r = 1e3,
                           dep,
+                          p_sd = 0,
                           return_prob = TRUE
 ) {
 

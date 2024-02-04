@@ -4,14 +4,16 @@
 \alias{sample_with_dependency}
 \title{Sample with dependency}
 \usage{
-sample_with_dependency(p_set, o, dep)
+sample_with_dependency(p_set, o, dep, p_sd)
 }
 \arguments{
 \item{p_set}{Set of picked options}
 
-\item{o}{number of options to choose frome}
+\item{o}{number of options to choose from}
 
 \item{dep}{degree of dependency between colleagues}
+
+\item{p_sd}{sd of p}
 }
 \value{
 vector of picked slots (integer)

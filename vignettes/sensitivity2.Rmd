@@ -20,6 +20,7 @@ knitr::opts_chunk$set(
 library(doodleproblem)
 library(dplyr)
 library(ggplot2)
+library(tictoc)
 ```
 
 

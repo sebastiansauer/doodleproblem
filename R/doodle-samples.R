@@ -7,6 +7,7 @@
 #' @param p number of picked options
 #' @param r number of repetitions of simulations (defaults to 1e3)
 #' @param dep degree of dependency between colleagues (defaults to 0)
+#' @param p_sd sd of p
 #'
 #' @return dataframe with samples
 #' @export
@@ -16,14 +17,16 @@
 doodle_samples <- function(n_colleagues,
                            o,
                            p,
+                           p_sd = 0,
                            r = 1e3,
                            dep = 0){
 
-  first_common_slot <- count_common_slots(n_colleagues, o = o, p = p, dep = dep)
+  first_common_slot <- count_common_slots(n_colleagues, o = o, p = p, p_sd = p_sd, dep = dep)
   all_common_slots <- estimate_common_slots(first_common_slot,
                                             n_colleagues = n_colleagues,
                                             o = o,
                                             p = p,
+                                            p_sd = p_sd,
                                             dep = dep)
 
   attr(all_common_slots, "n_colleagues") <- n_colleagues

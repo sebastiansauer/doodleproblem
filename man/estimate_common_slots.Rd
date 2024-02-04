@@ -9,6 +9,7 @@ estimate_common_slots(
   n_colleagues,
   o,
   p,
+  p_sd,
   dep,
   r = 1000
 )
@@ -22,6 +23,8 @@ estimate_common_slots(
 
 \item{p}{number of picked options}
 
+\item{p_sd}{sd of p}
+
 \item{dep}{degree of dependency beteen colleagues}
 
 \item{r}{number of repeated simulations}
@@ -30,8 +33,8 @@ estimate_common_slots(
 dataframe of samples for Doodle match
 }
 \description{
-Monte Carlo analysis of doodle matches
+Essentially a loop around `count_common_slots`
 }
 \examples{
-estimate_common_slots(slots_chosen_collision, n_colleagues, o, p, dep)
+estimate_common_slots(slots_chosen_collision, n_colleagues, o, p, p_sd, dep)
 }

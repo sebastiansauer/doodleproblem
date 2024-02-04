@@ -8,13 +8,14 @@
 #' @param p number of picked options
 #' @param dep  degree of dependency beteen colleagues
 #' @param r  number of repeated simulations
+#' @param p_sd sd of p
 #'
 #' @return dataframe of samples for Doodle match
 #' @export
 #'
 #' @examples
-#' estimate_common_slots(slots_chosen_collision, n_colleagues, o, p, dep)
-estimate_common_slots <- function(slots_chosen_collision, n_colleagues, o, p, dep, r = 1e3){
+#' estimate_common_slots(slots_chosen_collision, n_colleagues, o, p, p_sd, dep)
+estimate_common_slots <- function(slots_chosen_collision, n_colleagues, o, p, p_sd, dep, r = 1e3){
 
   smples <-
     slots_chosen_collision |>
@@ -26,6 +27,7 @@ estimate_common_slots <- function(slots_chosen_collision, n_colleagues, o, p, de
     tmp <- count_common_slots(n_colleagues = n_colleagues,
                               o = o,
                               p = p,
+                              p_sd = p_sd,
                               dep = dep)
     tmp$id <- i
 

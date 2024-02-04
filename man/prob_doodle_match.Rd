@@ -4,7 +4,15 @@
 \alias{prob_doodle_match}
 \title{Computes the probability of a doodle match}
 \usage{
-prob_doodle_match(n_colleagues, o, p, r = 1000, dep, return_prob = TRUE)
+prob_doodle_match(
+  n_colleagues,
+  o,
+  p,
+  r = 1000,
+  dep,
+  p_sd = 0,
+  return_prob = TRUE
+)
 }
 \arguments{
 \item{n_colleagues}{Number of colleagues addressed}
@@ -16,6 +24,8 @@ prob_doodle_match(n_colleagues, o, p, r = 1000, dep, return_prob = TRUE)
 \item{r}{number of repetions (simulates) samples}
 
 \item{dep}{dependencies between reviewers}
+
+\item{p_sd}{sd of p}
 
 \item{return_prob}{return a single number?}
 }

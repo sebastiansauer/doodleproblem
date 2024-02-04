@@ -31,6 +31,7 @@ are added as attributes to the output dataframe."><!-- mathjax --><script src="h
     <a class="dropdown-item" href="../articles/getting-started.html">Getting Started: Compute Doodle match probability</a>
     <a class="dropdown-item" href="../articles/sensitivity1.html">Sensitivity Analysis 1</a>
     <a class="dropdown-item" href="../articles/sensitivity2.html">Sensitivity Analysis 2 - Introducing dependency between colleagues</a>
+    <a class="dropdown-item" href="../articles/sensitivity3.html">Sensitivity Analysis 3 - Effect of varying number of picked slots</a>
   </div>
 </li>
 <li class="nav-item">
@@ -65,7 +66,7 @@ are added as attributes to the output dataframe.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">populate_grid</span><span class="op">(</span><span class="va">n_colleagues</span>, <span class="va">o</span>, <span class="va">p</span>, <span class="va">dep</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">populate_grid</span><span class="op">(</span><span class="va">n_colleagues</span>, <span class="va">o</span>, <span class="va">p</span>, <span class="va">dep</span>, p_sd <span class="op">=</span> <span class="fl">0</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -85,6 +86,10 @@ are added as attributes to the output dataframe.</p>
 <dt>dep</dt>
 <dd><p>degree of dependency</p></dd>
 
+
+<dt>p_sd</dt>
+<dd><p>sd of p</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
@@ -95,8 +100,8 @@ are added as attributes to the output dataframe.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">populate_grid</span><span class="op">(</span><span class="va">n_colleagues</span>, <span class="va">o</span>, <span class="va">p</span>, <span class="va">dep</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in expand_grid(n_colleagues = n_colleagues, o = o, p = p, dep = dep):</span> could not find function "expand_grid"</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">populate_grid</span><span class="op">(</span><span class="va">n_colleagues</span>, <span class="va">o</span>, <span class="va">p</span>, <span class="va">dep</span>, <span class="va">p_sd</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in expand_grid(n_colleagues = n_colleagues, o = o, p = p, p_sd = p_sd,     dep = dep):</span> could not find function "expand_grid"</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

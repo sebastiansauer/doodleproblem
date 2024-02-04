@@ -4,7 +4,7 @@
 \alias{doodle_samples}
 \title{Simulate Doodle Samples}
 \usage{
-doodle_samples(n_colleagues, o, p, r = 1000, dep = 0)
+doodle_samples(n_colleagues, o, p, p_sd = 0, r = 1000, dep = 0)
 }
 \arguments{
 \item{n_colleagues}{number of colleagues addressed}
@@ -12,6 +12,8 @@ doodle_samples(n_colleagues, o, p, r = 1000, dep = 0)
 \item{o}{number of options to choose from}
 
 \item{p}{number of picked options}
+
+\item{p_sd}{sd of p}
 
 \item{r}{number of repetitions of simulations (defaults to 1e3)}
 

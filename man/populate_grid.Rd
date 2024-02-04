@@ -4,7 +4,7 @@
 \alias{populate_grid}
 \title{Runs a sensitivity analysis for doodle matches}
 \usage{
-populate_grid(n_colleagues, o, p, dep, verbose = FALSE)
+populate_grid(n_colleagues, o, p, dep, p_sd = 0, verbose = FALSE)
 }
 \arguments{
 \item{n_colleagues}{number of colleagues}
@@ -14,6 +14,8 @@ populate_grid(n_colleagues, o, p, dep, verbose = FALSE)
 \item{p}{number of picked options}
 
 \item{dep}{degree of dependency}
+
+\item{p_sd}{sd of p}
 }
 \value{
 dataframe with results of Doodle match sensitivity analysis
@@ -24,5 +26,5 @@ results in data folder. Parameters of computations
 are added as attributes to the output dataframe.
 }
 \examples{
-populate_grid(n_colleagues, o, p, dep)
+populate_grid(n_colleagues, o, p, dep, p_sd)
 }

@@ -13,7 +13,10 @@ summarize_samples(smples)
 dataframe with summarized sample characteristics
 }
 \description{
-Summarizes Monte Carlo samples for finding the doodle match probability
+The returned dataframe shows for each simulated samples (denoted by `id`),
+whether or not there `is_match`. In more detail, if `Freq >= n_colleagues`,
+there `is_match`. Which slots happened to be the match (e.g, all colleagues
+chose slot 1) is not so important, but reported by `slots_chosen`.
 }
 \examples{
 summarize_samples(smples)
