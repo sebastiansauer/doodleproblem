@@ -39,7 +39,7 @@ In other words, the number of `p` varies.
 # Example with non-varying p
 
 ```{r}
-out <- count_common_slots(n_colleagues = n_colleagues,
+out <- count_common_slots(n_colleagues = 3,
                           o = 7,
                           p = 3,
                           dep = .5,
@@ -58,7 +58,7 @@ attr(out, "chosen_options_l")
 # Example with varying p
 
 ```{r}
-out2 <- count_common_slots(n_colleagues = n_colleagues,
+out2 <- count_common_slots(n_colleagues = 3,
                           o = 7,
                           p = 3,
                           dep = .5,
@@ -85,7 +85,7 @@ Of course, the number of picked options influences the probability of finding a 
 # Sensitivity analysis 3
 
 
-```{r pop-grid3a, cache=TRUE, eval = FALSE}
+```{r pop-grid3, cache=TRUE, eval = FALSE}
 tic()
 grid3 <- populate_grid(n_colleagues = 3:5, 
                       o = c(5, 10, 15, 20), 
@@ -97,35 +97,11 @@ toc()
 
 
 
-```{r pop-grid3a, cache=TRUE, eval = FALSE}
-tic()
-grid3a <- populate_grid(n_colleagues = 3:4, 
-                      o = c(5, 10), 
-                      p = c(3, 5), 
-                      dep = c(0),
-                      p_sd = c(0, 1))
-toc()
-```
-
-
-
-```{r pop-grid3b, cache=TRUE, eval = FALSE}
-tic()
-grid3b <- populate_grid(n_colleagues = 3:5, 
-                      o = c(5, 10, 15), 
-                      p = c(3, 5), 
-                      dep = c(0.5),
-                      p_sd = c(0, 1))
-toc()
-```
-
-
-
 
 It's quicker to load from disk:
 
 ```{r}
-#data(grid3)
+data(grid3)
 ```
 
 

@@ -33,21 +33,30 @@ In more stochastic parlance, this problem is a somewhat involved example of the 
 
 ## Model
 
-A number of `n_colleague` colleagues pick *p* options from a list of *o* possible options.
-We are interested in the probability that all colleagues pick (at least) one time the same slot.
-We consider the the number picked options, *p*, fix.
+1. A number of `n_colleagues` colleagues pick *p* options from a list of *o* possible options.
+2. We are interested in the probability that all colleagues pick (at least) one time the same slot.
+3. There can be an arbitrary degree of (stochastic) dependency between and within the colleagues (parameter: `dep`)
+4. *p* is randomly drawn from a normal distribution with mean *p* and sd *p_sd*.
+
+## Parameters
+
+In essence, the model is parametrized as follows:
+
+- `n_colleagues`: number of colleagues addressed
+- `p`: mean value of picked time slots per colleagues
+- `o`: number of time slots to choose from for each colleague
+- `dep`: proportion of dependency between (and within) reviewers
+- `p_sd`: sd of the number of picked options
+
+In addition, the parameter `r` states the number of *r*epetitions for drawing Monte Carlo samples.
 
 
-## Some Assumptions
 
-1. Picking slots (within a colleague) is independent, eg., picking slot 1 is dependent from picking slot 2. In other words, knowing that you have picked slot 1 does not tell my anythin new about the probability that you will pick slot 2.
-
-2. The colleagues pick slots independently from each other.
 
 
 ## Example
 
-Three colleagues - A,B,C - pick 3 slots from 10 options. 
+Three colleagues (`n_colleagues=3`) - A,B,C - pick exactly `p=3` (`p_sd=0`) slots from `o=10` options (with no dependency, ie. `dep=0`).
 
 For example, colleague A picks options 1, 2, and 3.
 
@@ -62,4 +71,10 @@ For example, colleague A picks options 1, 2, and 3.
 
 
 We have one match: All chose the option 1. (And to choose the option, but that's not enough for a match, as not all persons chose this number.)
+
+
+## Method
+
+Monte Carlo simulation methods are used to estimate the probability of a match.
+
 

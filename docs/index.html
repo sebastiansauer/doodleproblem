@@ -96,20 +96,36 @@
 <div class="section level2">
 <h2 id="model">Model<a class="anchor" aria-label="anchor" href="#model"></a>
 </h2>
-<p>A number of <code>n_colleague</code> colleagues pick <em>p</em> options from a list of <em>o</em> possible options. We are interested in the probability that all colleagues pick (at least) one time the same slot. We consider the the number picked options, <em>p</em>, fix.</p>
+<ol style="list-style-type: decimal">
+<li>A number of <code>n_colleagues</code> colleagues pick <em>p</em> options from a list of <em>o</em> possible options.</li>
+<li>We are interested in the probability that all colleagues pick (at least) one time the same slot.</li>
+<li>There can be an arbitrary degree of (stochastic) dependency between and within the colleagues (parameter: <code>dep</code>)</li>
+<li>
+<em>p</em> is randomly drawn from a normal distribution with mean <em>p</em> and sd <em>p_sd</em>.</li>
+</ol>
 </div>
 <div class="section level2">
-<h2 id="some-assumptions">Some Assumptions<a class="anchor" aria-label="anchor" href="#some-assumptions"></a>
+<h2 id="parameters">Parameters<a class="anchor" aria-label="anchor" href="#parameters"></a>
 </h2>
-<ol style="list-style-type: decimal">
-<li><p>Picking slots (within a colleague) is independent, eg., picking slot 1 is dependent from picking slot 2. In other words, knowing that you have picked slot 1 does not tell my anythin new about the probability that you will pick slot 2.</p></li>
-<li><p>The colleagues pick slots independently from each other.</p></li>
-</ol>
+<p>In essence, the model is parametrized as follows:</p>
+<ul>
+<li>
+<code>n_colleagues</code>: number of colleagues addressed</li>
+<li>
+<code>p</code>: mean value of picked time slots per colleagues</li>
+<li>
+<code>o</code>: number of time slots to choose from for each colleague</li>
+<li>
+<code>dep</code>: proportion of dependency between (and within) reviewers</li>
+<li>
+<code>p_sd</code>: sd of the number of picked options</li>
+</ul>
+<p>In addition, the parameter <code>r</code> states the number of <em>r</em>epetitions for drawing Monte Carlo samples.</p>
 </div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<p>Three colleagues - A,B,C - pick 3 slots from 10 options.</p>
+<p>Three colleagues (<code>n_colleagues=3</code>) - A,B,C - pick exactly <code>p=3</code> (<code>p_sd=0</code>) slots from <code>o=10</code> options (with no dependency, ie. <code>dep=0</code>).</p>
 <p>For example, colleague A picks options 1, 2, and 3.</p>
 <table class="table">
 <thead><tr class="header">
@@ -140,6 +156,11 @@
 </tbody>
 </table>
 <p>We have one match: All chose the option 1. (And to choose the option, but that’s not enough for a match, as not all persons chose this number.)</p>
+</div>
+<div class="section level2">
+<h2 id="method">Method<a class="anchor" aria-label="anchor" href="#method"></a>
+</h2>
+<p>Monte Carlo simulation methods are used to estimate the probability of a match.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
